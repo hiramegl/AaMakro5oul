@@ -55,13 +55,15 @@ My objective with this project is to develop an Ableton Live controller for DJ'i
 loops on-the-go during gigs. I also wanted to create functions or commands ("macros") that perform many operations
 simultaneously, just with the touch of one button.
 
+---
 
 ## Installation
 
 In order to install AaMakro5oul, you should install the following dependencies (in this order):
 1. Open Stage Control (0.23.0)
-2. Ruby
-3. Virtual MIDI Port (MAC OS)
+1. Ruby
+1. Virtual MIDI Port (MAC OS)
+1. Deploying scripts (MAC OS)
 
 ### 1. Open Stage Control 0.23.0
 Open Stage Control is used as a bridge between the AaMakro5oul GUI and Ableton Live. The GUI configuration is saved in the file
@@ -91,6 +93,26 @@ instructions to create a Virtual MIDI Port (only for MAC OS):
 5. Select the MIDI Port "AbletonLive" that you just created when configuring your control surface in the "Preferences" dialog
    of your Ableton Live 9.
 
+### Deploying scripts (MAC OS)
+
+1. The root 'AaMakro5oul' directory (containing 'AaMakro5oul.py') shoud be copied inside Ableton Live 9:
+```
+/Applications/Ableton Live 9 Standard.app/Contents/App-Resources/MIDI Remote Scripts/AaMakro5oul
+```
+
+1. The 'AaMakro5oul' subdirectory (containg config.txt) should be copied in your user directory:
+```
+/Users/<your_user_name>/AaMakro5oul
+```
+
+## SW Connections
+
+The sofware connections diagram is this:
+
+![alt text](https://github.com/hiramegl/AaMakro5oul/AaMakro5oul/doc/images/AaMakro5oul_SW_connections.png "AaMakro5oul Software connections")
+
+---
+
 ## Hardware
 
 One of the amusing things with this project was to assemble the hardware as well. I bought all parts separated and
@@ -115,23 +137,21 @@ I selected this touchscreen because it was big, but I'm still looking for a bigg
 
 ### Raspberry Pi B+
 
-I bought the Raspberry Pi in a convenience store and it was really easy to get started just by watching some videos in youtube.
+I bought the Raspberry Pi in an electronics store and it was really easy to get started just by watching some videos in youtube.
 Again, no rocket science to assemble the Raspberry Pi B+ neither.
 
 ### U-Phoria UMC404HD
 
-I was looking for a soundcard with balanced XLR connectors since it was the most common interface in the places I had played.
+I was looking for a soundcard with balanced XLR connectors since it was the most common interface in the places I had been playing.
 It also has a headphones output for monitoring. I'm really happy with this soundcard and I highly recommend it!
 
 ## HW Connections
 
 The hardware connections diagram is this:
 
+![alt text](https://github.com/hiramegl/AaMakro5oul/AaMakro5oul/doc/images/AaMakro5oul_HW_connections.png "AaMakro5oul Hardware connections")
 
-## SW Connections
-
-The sofware connections diagram is this:
-
+---
 
 ## Why _AaMakro5oul_?
 

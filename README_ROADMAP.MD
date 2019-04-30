@@ -17,8 +17,9 @@
 
 # AaMakro5oul Roadmap
 
+* Installation script for MACOS and Windows
 * Manual
-* Support for latest version of Open Stage Control
+* Support for the latest version of Open Stage Control
 * Rythms for beat sequencer (zouk, reggaeton, house, ...)
 * Notes operations (up tone-shift, down tone-shift, left time-shift, right time-shift, double note duration, half note duration, chop note, delete note)
 * Correct implementation of 'RESET' button
