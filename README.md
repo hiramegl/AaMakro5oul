@@ -109,7 +109,7 @@ instructions to create a Virtual MIDI Port (only for MAC OS):
 
 The sofware connections diagram is this:
 
-![alt text](https://github.com/hiramegl/AaMakro5oul/AaMakro5oul/doc/images/AaMakro5oul_SW_connections.png "AaMakro5oul Software connections")
+![Sofware connections](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul_SW_connections.png "AaMakro5oul Software connections")
 
 ---
 
@@ -149,7 +149,7 @@ It also has a headphones output for monitoring. I'm really happy with this sound
 
 The hardware connections diagram is this:
 
-![alt text](https://github.com/hiramegl/AaMakro5oul/AaMakro5oul/doc/images/AaMakro5oul_HW_connections.png "AaMakro5oul Hardware connections")
+![Hardware connections](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul_HW_connections.png "AaMakro5oul Hardware connections")
 
 ---
 
