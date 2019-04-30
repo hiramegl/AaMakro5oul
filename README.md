@@ -17,7 +17,9 @@
 
 # AaMakro5oul
 
-_OSC/MIDI Controller for Ableton Live 9 with DJ features._
+*OSC/MIDI Controller for Ableton Live 9 with DJ features.*
+
+[Introduction video]( https://www.youtube.com/watch?v=c_8AIdnh3MI)
 
 
 ## Features
