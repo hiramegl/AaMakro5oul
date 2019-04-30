@@ -151,7 +151,7 @@ It also has a headphones output for monitoring. I'm really happy with this sound
 
 The hardware connections diagram is this:
 
-![Hardware connections](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul_HW_connections.png "AaMakro5oul Hardware connections")
+![Hardware connections](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul_HW_connections.jpg "AaMakro5oul Hardware connections")
 
 ---
 
