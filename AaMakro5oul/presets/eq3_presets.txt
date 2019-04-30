@@ -1,0 +1,24 @@
+# ******************************************************************************
+# This file is part of the AaMakro5oul project
+# (An OSC/MIDI controller for Ableton Live with DJ features)
+#
+# Full project source: https://github.com/hiramegl/AaMakro5oul
+#
+# License     : Apache License 2.0
+# Full license: https://github.com/hiramegl/AaMakro5oul/blob/master/LICENSE
+#
+# Copyright 2018, 2019 by Hiram Galicia (hiramegl@yahoo.com)
+# http://www.unasystems.com
+#
+# All rights reserved.
+# ******************************************************************************
+
+# 0:Name            |1:GainLo     |2:GainMid    |3:GainHi     |4:FreqLo  |5:FreqHi  |6:LowOn|7:MidOn|8:HighOn|9:Slope
+Boost_HiHats        |1            |1            |1.99526203   |464.754883|2037.84412|true   |true   |true    |0      
+Edges               |0.9964278936 |1            |1            |155.250671|10917.7832|true   |false  |true    |1      
+Hi                  |0.00031622799|0.00031622799|1.48977268   |249.999969|1766.57275|true   |true   |true    |1      
+Infrasonic          |1.99526203   |1            |1            |50        |2500.00049|true   |false  |false   |1      
+Less_Low_More_Mid   |0.00031622799|1.99526203   |0.9607078433 |77.5257874|1897.36658|true   |true   |true    |0      
+Midnight            |0.00031622799|1.99526203   |0.00031622799|622.598511|3608.51685|true   |true   |true    |1      
+Remove              |0.9964278936 |1            |1            |464.754883|2037.84412|true   |false  |true    |0      
+Default             |1            |1            |1            |250.000000|2500.00000|true   |true   |true    |1      

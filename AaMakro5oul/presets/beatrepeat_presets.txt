@@ -1,0 +1,33 @@
+# ******************************************************************************
+# This file is part of the AaMakro5oul project
+# (An OSC/MIDI controller for Ableton Live with DJ features)
+#
+# Full project source: https://github.com/hiramegl/AaMakro5oul
+#
+# License     : Apache License 2.0
+# Full license: https://github.com/hiramegl/AaMakro5oul/blob/master/LICENSE
+#
+# Copyright 2018, 2019 by Hiram Galicia (hiramegl@yahoo.com)
+# http://www.unasystems.com
+#
+# All rights reserved.
+# ******************************************************************************
+
+# 0:Name            |1:Chance     |2:Interval   |3:Offset     |4:Grid    |5:Block Tripl |6:GridChance   |7:GridChanceType  |8:Gate        |9:DampVolume  |10:DampPitch   |11:BasePitch  |12:MixType    |13:WetLevel   |14:FilterOn   |15:MidFreq     |16:BandWidth    |17:InstantRepeat
+#                   |             |             |             |          |              |  (Variation)  |  (Variation Type)|              |  (Decay)     |  (Pitch Decay)|   (Pitch)    |              |   (Volume)   |              |   (FilterFreq)|   (FilterWidth)|   (Repeat)
+#                   |[0, 1]       |[0, 7]       |[0, 15]      |[0, 15]   |[64, 127]?    |[0, 10]        |?                 |[0, 18]       |[0, 1]        |[0, 1]         |[0, 12]       |?             |[0.0003, 1.99]|[64, 127]?    |[50, 18000]    |[0.5, 9]        |[64, 127]?
+0_Default           |1            |5            |0            |7         |false         |0              |0                 |6             |0             |0              |0             |0             |1             |false         |1000           |4               |false
+1_One_Bar_Repeat    |0            |5            |0            |15        |true          |0              |0                 |0             |0             |0              |0             |0             |1             |false         |1000           |8               |true
+Airpusher           |0.700787425  |2            |0            |7         |true          |3              |2                 |8             |0             |0.6377952695   |12            |1             |1             |true          |3864.98828     |4.484375        |false
+Brain_Dance         |1            |3            |4            |3         |false         |8              |0                 |4             |0.25          |1              |4             |0             |0.3500822783  |true          |2766.32715     |6.34375         |false
+Chopping_Block      |1            |3            |0            |7         |true          |7              |0                 |7             |0.708661437   |0.6377952695   |12            |1             |1             |true          |3381.03857     |6.875           |false
+Deconstruct         |0.1653543264 |1            |0            |3         |false         |3              |4                 |14            |0             |0              |12            |1             |1.99526203    |true          |2766.32715     |6.078125        |false
+Fill_In_The_Gaps    |1            |3            |0            |8         |true          |4              |1                 |18            |0.708661437   |0.9133858085   |0             |0             |1             |true          |1325.45728     |2.625           |false
+Insect              |1            |3            |0            |0         |false         |0              |4                 |17            |0             |0.07874015719  |0             |0             |1.99526203    |true          |2957.68823     |4.75            |false
+Microfillz          |0.6456692815 |4            |2            |7         |true          |8              |4                 |2             |0.3543307185  |0.04724409431  |0             |0             |1.20098603    |true          |1000           |4               |false
+Repeight            |0.4094488323 |1            |0            |9         |false         |0              |0                 |3             |0             |0              |0             |0             |0.9319788218  |true          |3864.98828     |4.75            |false
+Robo_Voice          |1            |0            |0            |0         |false         |3              |3                 |0             |0             |0              |5             |1             |1.49317813    |true          |2957.68823     |6.078125        |false
+Semisubtle          |1            |5            |8            |9         |false         |3              |4                 |6             |0.25          |0.1889763772   |0             |0             |1.33929181    |true          |1000           |4               |false
+Slap_Back           |1            |2            |0            |5         |true          |3              |1                 |9             |0.708661437   |0.275590539    |5             |0             |1             |true          |4723.83398     |4.21875         |false
+Squishy             |1            |1            |4            |0         |true          |2              |1                 |2             |0.4645669162  |1              |0             |0             |1.60823488    |true          |2263.37646     |2.625           |false
+Vocal_Fun           |0.803149581  |4            |2            |5         |true          |9              |4                 |3             |0.3543307185  |0.03149606287  |0             |1             |1.72802413    |true          |1000           |4               |false

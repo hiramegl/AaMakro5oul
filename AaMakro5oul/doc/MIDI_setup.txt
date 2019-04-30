@@ -1,0 +1,122 @@
+# ******************************************************************************
+# This file is part of the AaMakro5oul project
+# (An OSC/MIDI controller for Ableton Live with DJ features)
+#
+# Full project source: https://github.com/hiramegl/AaMakro5oul
+#
+# License     : Apache License 2.0
+# Full license: https://github.com/hiramegl/AaMakro5oul/blob/master/LICENSE
+#
+# Copyright 2018, 2019 by Hiram Galicia (hiramegl@yahoo.com)
+# http://www.unasystems.com
+#
+# All rights reserved.
+# ******************************************************************************
+
+MIDI setup in MAC OS
+---------------------
+
+https://github.com/jean-emmanuel/open-stage-control/issues/218#issuecomment-372262895
+
+hiramegl commented on 9 Mar 2018
+
+Hi,
+
+I think there is already a thread called MIDI help but doesn't seem to have a happy end :(
+I would like to be a able to send MIDI messages to my Ableton Live application but I cannot manage to
+configure Open Stage Control correctly after reading the documentation. :'(
+
+Might be that I am asking super dummy questions but hope you guys could be patient :)
+
+I have a mac (Sierra 10.13) where I run Ableton Live 9 and in the same computer i have an Open Stage Control
+server running. I open the web GUI from a tablet to send OSC messages and update the GUI receiving messages
+from Ableton Live. Everything works like a charm but I have a new challenge.
+
+I develop my application reading the unofficial python API documentation for Ableton Live and by checking
+some other example scripts. So far so good, but now I need to send MIDI messages cause it seems that
+Ableton Live does not expose all methods to change the state of some features from their python API.
+Luckily it seems that I can map some of these buttons with MIDI events :-)
+
+The problem now is that I have not managed to start my Open Stage Control server with MIDI support.
+
+So the questions are:
+- I have ran 'pip install rtmidi' and I see the package in the list but I am suspecting I need to uninstall
+  it and install it manually making sure this is fulfilled: "compiled with --jack-midi flag for JACK MIDI support"
+- Do I need to uninstall it and compile it and install rtmidi manually?
+  When I open the server GUI I see that in the "midi" field there is "midi routing settings (requires python-pyo)".
+- Do I need to install python-pyo? I don't seem to find it in any repository. I have downloaded
+  "pyo_0.9.0_OSX_py2-universal.dmg" from the company that develops python-pyo but it did not install any python
+  library from what I understood. It seems to be a standalone application only.
+
+When I manage to configure the MIDI in Open Stage Control, what would be the next step to link a button with
+Ableton Live? I saw in the documentation I need to write "midi:<device_name>".
+How do I find the <device_name> for Ableton Live?
+Do I need to configure something in Ableton Live?
+Maybe the only problem is that I am not very familiar with the MIDI interface, OSC was "easier" to understand
+as is a server-client relation.
+
+Sorry for the long message but hopefully anybody has some tips or links where I can find a bit more information
+cause I feel a bit lost :-(
+
+Thanks again for the great product you build guys!
+
+Cheers,
+
+/Hiram
+
+--------------------------------------------------------------------------------
+
+jean-emmanuel commented on 9 Mar 2018
+Hi Hiram, thank you for the clear and detailed post !
+
+Do I need to uninstall it and compile it and install rtmidi manually?
+Only if you use jack to manage your midi connections.
+
+Do I need to install python-pyo ?
+No, only rtmidi is required. I should have removed this old requirement from the docs a long time ago
+actually... done :)
+
+[...]
+device_name is an arbitrary name you choose : it refers to a pair of midi input/output defined by passing
+device_name:input,output to open stage control's midi option, where input and output are midi port numbers
+you can find out by passing list to the midi option (this will make the console print available midi ports
+including Ableton's, I guess).
+
+If you are familiar with virtual midi ports, you could spare the hassle of finding out the port numbers
+(which may change depending on how many devices are connected) by using virtual midi ports: device_name:virtual
+will open a pair of virtual midi input/output ports you should be able to connect to Ableton's.
+
+I'm not an OSX or Ableton user myself so I can't be much more specific unfortunately, but I've read OSX
+supports virtual midi ports.
+
+--------------------------------------------------------------------------------
+
+hiramegl commented on 11 Mar 2018
+Hi Jean!
+
+Thanks again for the help!
+I started by creating a virtual midi port. It seems there is an application in Mac called "Audio MIDI setup"
+where is possible to create virtual midi ports, as you wrote.
+
+I activated the "IAC Driver" and created a virtual port "AbletonLive". Then I saw it showed up when running
+the Open Stage Control server with "-m list" option.
+
+All is working fine now, the only thing is that when I wrote "AbletonLive:1,1" to configure the midi options
+the Open Stage Control GUI crashed. But it worked like a charm when I ran all the options in the command line.
+Very weird.
+
+I will continue running Open Stage Control from the command line, just wonder if I am writing wrong parameters
+in the GUI.
+
+Thanks for your help!
+Greetings,
+
+/Hiram
+
+--------------------------------------------------------------------------------
+
+jean-emmanuel commented on 5 May 2018
+Sorry for getting back to you after such a long time. It seems the problem is trivial : the main process stops
+when it receives setup errors from the python process, I'm changing this so that the main process stays alive
+and shows the error in the GUI's console.
+

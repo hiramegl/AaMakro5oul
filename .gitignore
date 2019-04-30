@@ -1,0 +1,6 @@
+# ignore directories
+dev_res/
+
+# ignore files
+session_*
+*.pyc

@@ -1,0 +1,109 @@
+# ******************************************************************************
+# This file is part of the AaMakro5oul project
+# (An OSC/MIDI controller for Ableton Live with DJ features)
+#
+# Full project source: https://github.com/hiramegl/AaMakro5oul
+#
+# License     : Apache License 2.0
+# Full license: https://github.com/hiramegl/AaMakro5oul/blob/master/LICENSE
+#
+# Copyright 2018, 2019 by Hiram Galicia (hiramegl@yahoo.com)
+# http://www.unasystems.com
+#
+# All rights reserved.
+# ******************************************************************************
+
+# ******************************************************************************
+# Configuration file for 'AaMakro5oul' Ableton Live controller
+# ******************************************************************************
+
+# ******************************************************************************
+# Settings format:
+#   Name_of_feature | Value_of_feature
+# ******************************************************************************
+
+# ==============================================================================
+# Config for PYTHON script running inside Ableton Live (AaMakro5oul.py)
+# ==============================================================================
+
+    # ---------------------
+    # Communications config
+    # ---------------------
+
+        # tx_addr is the address where the Open Stage Control server is found,
+        # use 127.0.0.1 if the server is running in the same machine as your
+        # Ableton Live
+        tx_addr | 127.0.0.1
+        tx_port | 2721
+
+        # rx_addr should NEVER be changed (unless you know what you are doing)
+        rx_addr | 127.0.0.1
+        rx_port | 2720
+
+    # -------------------
+    # Controller features
+    # -------------------
+
+        # true to update the beat in the controller.
+        # set to false to disable beat update in order to do easier debugging
+        # in the OSC events log
+        send_beat | true
+
+    # ----------------
+    # Logging features
+    # ----------------
+
+        # log info for debugging
+        log | true
+
+        # log received OSC messages for debugging
+        # (feature 'log' needs to be 'true')
+        log_rx_msgs | true
+
+#===============================================================================
+# Config for RUBY script running outside Ableton Live (AaMakro5oul_server.rb)
+#===============================================================================
+
+    # ---------------------
+    # Communications config
+    # ---------------------
+
+        # ruby_rx_port should NEVER be changed
+        # (unless you know what you are doing)
+        ruby_rx_port | 2729
+
+    # ------------
+    # Mouse scroll
+    # ------------
+
+        # used to control the amount of mouse scroll
+        scroll_base | 2
+
+    # --------------
+    # Mouse position
+    # --------------
+
+        # used to prevent from reaching the edges of the screen
+        # when using the touch function (feature removed in gui currently)
+        mouse_border | 10
+
+        # used to position the mouse cursor
+        mouse_max_x  | 1920
+        mouse_max_y  | 1200
+
+    # ---------------------------
+    # Screen positions of buttons
+    # ---------------------------
+
+        # used to move the mouse cursor position to the 'song' area
+        song_pos_x | 1200
+        song_pos_y | 1050
+
+        # used to move the mouse cursor position to the 'cueing' button
+        cue_pos_x | 1814
+        cue_pos_y | 810
+
+        # used to move the mouse cursor position to the 'legato' button
+        legato_pos_x | 328
+        legato_pos_y | 992
+

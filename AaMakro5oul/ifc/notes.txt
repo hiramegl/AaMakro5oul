@@ -1,0 +1,5 @@
+Maximum dimensions to draw controls in open source control with one tab level only:
+Max width : 1360
+Max height:  720
+
+Any component should be inside those coordinates
