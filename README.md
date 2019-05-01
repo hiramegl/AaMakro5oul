@@ -135,7 +135,7 @@ I found a thread with some tips about cheap touchscreens for raspberry Pi.
 
 After checking the alternatives I decided to invest in this one:
 
-* [LCD with capacitive touchscreen](https://www.chalk-elec.com/?page_id=1283&_escaped_fragment_=/~/product/category=3094861%2526id=14647633#!/15-6-HDMI-interface-LCD-with-capacitive-touchscreen/p/38127425/category=3094861)
+* [LCD with capacitive touchscreen](https://www.chalk-elec.com/?page_id=1280#!/15-6-HDMI-interface-LCD-with-capacitive-touchscreen/p/38127425/category=3094861)
 
 There is a couple of videos in that page showing how to connect the touchscreen with the Raspberry Pi (no rocket science at all).
 I selected this touchscreen because it was big, but I'm still looking for a bigger one! :-D
