@@ -19,8 +19,9 @@
 
 *OSC/MIDI Controller for Ableton Live 9 with DJ features.*
 
-[Introduction video]( https://www.youtube.com/watch?v=c_8AIdnh3MI)
+![AaMakro5oul Views](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul-Views.jpg "AaMakro5oul Views")
 
+[Introduction video - launching AaMakro5oul]( https://www.youtube.com/watch?v=c_8AIdnh3MI)
 
 ## Features
 * 5 Views:
@@ -62,12 +63,28 @@ simultaneously, just with the touch of one button.
 ## Installation
 
 In order to install AaMakro5oul, you should install the following dependencies (in this order):
-1. Open Stage Control (0.23.0)
-1. Ruby
-1. Virtual MIDI Port (MAC OS)
 1. Deploying scripts (MAC OS)
+1. Open Stage Control (0.23.0)
+1. Ruby and 'mouse' gem
+1. Virtual MIDI Port (MAC OS)
 
-### 1. Open Stage Control 0.23.0
+### Deploying scripts (MAC OS)
+
+1. The root 'AaMakro5oul' directory (containing 'AaMakro5oul.py') shoud be copied inside Ableton Live 9:
+```
+/Applications/Ableton Live 9 Standard.app/Contents/App-Resources/MIDI Remote Scripts/AaMakro5oul
+```
+
+1. The 'AaMakro5oul' subdirectory (containg config.txt) should be copied in your user directory:
+```
+/Users/<your_user_name>/AaMakro5oul
+```
+It also possible to create a soft-link (which is the solution I have myself). Run in a terminal:
+```
+ln -s /Applications/Ableton Live 9 Standard.app/Contents/App-Resources/MIDI Remote Scripts/AaMakro5oul/AaMakro5oul /Users/<your_user_name>/AaMakro5oul
+```
+
+### Open Stage Control 0.23.0
 Open Stage Control is used as a bridge between the AaMakro5oul GUI and Ableton Live. The GUI configuration is saved in the file
 'ifc/latest.json' and is loaded when the script 'AaMakro5oul_server.sh' is executed. Open Stage Control has released many new
 versions after 0.23.0 but unfortunately I was not cautious enough to download the latest versions and try my 'latest.json'
@@ -95,23 +112,9 @@ instructions to create a Virtual MIDI Port (only for MAC OS):
 5. Select the MIDI Port "AbletonLive" that you just created when configuring your control surface in the "Preferences" dialog
    of your Ableton Live 9.
 
-### Deploying scripts (MAC OS)
+## Software connections
 
-1. The root 'AaMakro5oul' directory (containing 'AaMakro5oul.py') shoud be copied inside Ableton Live 9:
-```
-/Applications/Ableton Live 9 Standard.app/Contents/App-Resources/MIDI Remote Scripts/AaMakro5oul
-```
-
-1. The 'AaMakro5oul' subdirectory (containg config.txt) should be copied in your user directory:
-```
-/Users/<your_user_name>/AaMakro5oul
-```
-
-## SW Connections
-
-The sofware connections diagram is this:
-
-![Sofware connections](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul_SW_connections.png "AaMakro5oul Software connections")
+![Software connections](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul_SW_connections.png "AaMakro5oul Software connections")
 
 ---
 
@@ -147,35 +150,34 @@ Again, no rocket science to assemble the Raspberry Pi B+ neither.
 I was looking for a soundcard with balanced XLR connectors since it was the most common interface in the places I had been playing.
 It also has a headphones output for monitoring. I'm really happy with this soundcard and I highly recommend it!
 
-## HW Connections
-
-The hardware connections diagram is this:
+## Hardware connections
 
 ![Hardware connections](https://raw.githubusercontent.com/hiramegl/AaMakro5oul/master/AaMakro5oul/doc/images/AaMakro5oul_HW_connections.jpg "AaMakro5oul Hardware connections")
 
 ---
 
-## Why _AaMakro5oul_?
+## Why *AaMakro5oul*?
 
 ### Aa
 This is the first project that I program in Python. While developing this project my script used to crash very, very often,
-so in order to load it again I needed to scroll in the list of MIDI controllers until I found it, which was time consuming.
-Therefore, I put the 'Aa' at the beginning so that I would not need to scroll and just find it quickly.
+so in order to load it again I needed to scroll in the list of MIDI controllers in Ableton Live until I found it, which was
+time consuming.  Therefore, I put the 'Aa' at the beginning so that it would not be necessary to scroll but just find it first
+in the list of surface controllers.
 
 ### Makro
 Originally 'M4kro' but I tought it would be more confusing to pronounce, therefore I left it as 'Makro'. Makro is for
-"macroinstructions" or "macrocommands", i.e., commands that execute things automatically, like autovolume control, autoeffect
+"macroi-nstructions" or "macro-commands", i.e., commands that execute things automatically, like autovolume control, autoeffect
 control, build-up automation, rebooting a channel, etc. I want to save time by clicking one button that does everything for me.
 
 ### 5oul
 
 I got inspired after watching a couple of videos of two of my all-time favorite DJ's: Paul Van Dyk and Deadmau5.
-Indeed, that is the reason why I have the '5' in my DJ name 'Lua5oul' and in my controller, which would be the soul of my mix :-D
+Indeed, that is the reason why I have the '5' in my Dj name 'Lua5oul' and in my controller, which is the soul of my mix :-)
 
   * [Future Music Live Set Up With Deadmau5](https://www.youtube.com/watch?v=GTCqeWu094I)
   * [PAUL VAN DYK - My Sound Set Up At Space Miami](https://www.youtube.com/watch?v=P1zRiRnen5M&feature=youtu.be)
 
 
 ## About the author
-My name is Hiram Galicia (hiramegl@yahoo.com) and have a great passion for music and programming.
+My name is Hiram Galicia (hiramegl@yahoo.com) and have a great passion for music, dancing and programming.
 
