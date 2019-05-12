@@ -29,7 +29,7 @@ class TrackDevSelectHandler(CoreHandler):
         self.m_bLogRxMsgs     = False
         self.config('/track/dev/select', self.m_bIgnoreRelease, self.m_bLogRxMsgs)
 
-        for sCmd in ['track','reset','solo']:
+        for sCmd in ['track','reset','solo','volume']:
             self.add_callbacks_pref(sCmd, CoreHandler.m_aChannels)
         self.add_callbacks(['mode'])
 
@@ -207,6 +207,27 @@ class TrackDevSelectHandler(CoreHandler):
 
             return # nothing else to do here!
 
+        if (sCmd == 'volume'):
+            aDevTrackSel = self.sel_track_dev(sChannel)
+            sTrackType   = aDevTrackSel[0]
+            nIdxAbs      = aDevTrackSel[1]
+
+            # check if there is actually a track assigned to that channel
+            if (sTrackType != 'none'):
+                if (sTrackType == 'track'):
+                    oTrack = self.get_track(nIdxAbs)
+                else:
+                    oTrack = self.get_return(nIdxAbs)
+                oMixDev              = oTrack.mixer_device
+                oMixDev.volume.value = _aMessage[2]
+                #self.send_msg('volume/%s' % (sChannel), _aMessage[2])
+
+            else:
+                self.send_msg('volume/%s' % (sChannel), 0.0) # turn volume off immediately!
+
+            return # nothing else to do here!
+
+
         # handle 'track' subcommand
         sTrackIdx = _aMessage[2]     # track index relative or return index absolute
         nValue    = _aMessage[3]     # toggle value
@@ -292,6 +313,12 @@ class TrackDevSelectHandler(CoreHandler):
             sId    = 'track_dev_select_reset_%s' % (sChannel)
             sAttrs = '{"label": "%s%d: %s", "css": "background-color: %s"}' % (sType, nIdxAbs, sName, self.to_color(oTrack.color))
             self.send('/EDIT', [sId, sAttrs])
+
+
+            # update solo state and volume for selected track
+            nSolo = 1.0 if (oTrack.solo) else 0.0
+            self.send_msg('solo/%s' % (sChannel), nSolo)
+            self.send_msg('volume/%s' % (sChannel), oTrack.mixer_device.volume.value)
 
             # TrackDev[*]Handler: all devices in order to send their values to the GUI
             hArgs = {
