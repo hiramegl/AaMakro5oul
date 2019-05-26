@@ -19681,7 +19681,7 @@
                         "type": "push",
                         "id": "session_tempo_reset",
                         "linkId": "",
-                        "width": 80,
+                        "width": 40,
                         "label": "^clock",
                         "color": "auto",
                         "css": "font-size: 2em; color: blue",
@@ -19693,7 +19693,7 @@
                         "preArgs": [],
                         "target": [],
                         "top": 40,
-                        "left": 640,
+                        "left": 760,
                         "height": 40
                     },
                     {
@@ -19713,7 +19713,7 @@
                             1
                         ],
                         "target": [],
-                        "top": 0,
+                        "top": 40,
                         "left": 600,
                         "height": 40
                     },
@@ -19734,8 +19734,8 @@
                             5
                         ],
                         "target": [],
-                        "top": 0,
-                        "left": 560,
+                        "top": 400,
+                        "left": 40,
                         "height": 40
                     },
                     {
@@ -19755,8 +19755,8 @@
                             10
                         ],
                         "target": [],
-                        "top": 40,
-                        "left": 600,
+                        "top": 400,
+                        "left": 0,
                         "height": 40
                     },
                     {
@@ -19776,7 +19776,7 @@
                             1
                         ],
                         "target": [],
-                        "top": 0,
+                        "top": 40,
                         "left": 720,
                         "height": 40
                     },
@@ -19797,8 +19797,8 @@
                             5
                         ],
                         "target": [],
-                        "top": 0,
-                        "left": 760,
+                        "top": 400,
+                        "left": 80,
                         "height": 40
                     },
                     {
@@ -19818,8 +19818,8 @@
                             10
                         ],
                         "target": [],
-                        "top": 40,
-                        "left": 720,
+                        "top": 400,
+                        "left": 120,
                         "height": 40
                     },
                     {
@@ -20808,7 +20808,7 @@
                     },
                     {
                         "type": "text",
-                        "top": 0,
+                        "top": 40,
                         "left": 640,
                         "id": "session_tempo",
                         "width": 80,
@@ -29715,8 +29715,8 @@
                     },
                     {
                         "type": "modal",
-                        "top": 40,
-                        "left": 760,
+                        "top": 400,
+                        "left": 1320,
                         "id": "session_tools",
                         "width": 40,
                         "height": 40,
@@ -30180,7 +30180,7 @@
                         "left": 1280,
                         "id": "pad_mouse_pos_song",
                         "linkId": "",
-                        "width": 80,
+                        "width": 40,
                         "height": 40,
                         "label": "^mouse-pointer",
                         "color": "auto",
@@ -30364,6 +30364,42 @@
                         "left": 1160,
                         "height": 40,
                         "angle": 270
+                    },
+                    {
+                        "type": "fader",
+                        "id": "session_tempo_fader",
+                        "linkId": "",
+                        "width": 240,
+                        "color": "auto",
+                        "css": ".label {display: none}",
+                        "precision": 3,
+                        "address": "/session/tempo/fader",
+                        "preArgs": [],
+                        "target": [],
+                        "top": 0,
+                        "left": 560,
+                        "height": 40,
+                        "horizontal": true,
+                        "alignRight": false,
+                        "pips": false,
+                        "input": false,
+                        "meter": false,
+                        "compact": true,
+                        "dashed": true,
+                        "snap": false,
+                        "spring": false,
+                        "doubleTap": false,
+                        "range": {
+                            "min": 0,
+                            "max": 1
+                        },
+                        "logScale": false,
+                        "unit": "",
+                        "origin": "auto",
+                        "value": "",
+                        "touchAddress": "",
+                        "meterAddress": "",
+                        "label": "auto"
                     }
                 ],
                 "tabs": [],

@@ -46,6 +46,7 @@ class CoreHandler(BaseHandler):
     m_aSceneIndeces = [str(i) for i in xrange(m_nGuiVisScenes)] + ['selected']
     m_aBeatsIndeces = [str(i) for i in xrange(m_nGuiVisBeats)]
     m_hBeats = {
+        "6400": 64.0,
         "3200": 32.0,
         "1600": 16.0,
         "0800": 8.0,

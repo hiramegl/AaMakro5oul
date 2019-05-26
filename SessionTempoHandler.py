@@ -28,7 +28,7 @@ class SessionTempoHandler(BaseHandler):
         bLogRxMsgs     = False
         self.config('/session/tempo', bIgnoreRelease, bLogRxMsgs)
 
-        self.add_callbacks(['reset', 'minus', 'plus', 'div', 'mult'])
+        self.add_callbacks(['reset', 'minus', 'plus', 'fader'])
 
 
     def handle(self, _aMessages):
@@ -46,6 +46,15 @@ class SessionTempoHandler(BaseHandler):
             return
 
         nValue = _aMessages[2]
+
+        if (self.m_sCmd == 'fader'):
+            # here nValue is a value from 0.0 to 1.0
+            nMinTempo = self.m_hConfig['nMinTempo']
+            nMaxTempo = self.m_hConfig['nMaxTempo']
+            nNewTempo = nMinTempo + (nValue * (nMaxTempo - nMinTempo))
+            self.tempo(nNewTempo)
+            return
+
         nTempo = self.tempo()
 
         if (self.m_sCmd == 'minus'):
@@ -53,12 +62,6 @@ class SessionTempoHandler(BaseHandler):
 
         elif (self.m_sCmd == 'plus'):
             nTempo += nValue
-
-        elif (self.m_sCmd == 'div'):
-            nTempo /= nValue
-
-        elif (self.m_sCmd == 'mult'):
-            nTempo *= nValue
 
         self.tempo(nTempo)
 

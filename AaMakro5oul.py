@@ -82,11 +82,16 @@ class AaMakro5oul:
 
         # features
         self.m_bSendBeat = True # Set to False for easier debugging
+        self.m_nMinTempo = 90
+        self.m_nMaxTempo = 140
+
         self.m_hConfig   = {
             'sProductName': self.m_sProductName,
             'sProductDir' : self.m_sProductDir,
             'bLog'        : True, # Set to True for debugging
-            'bLogRxMsgs'  : True  # Set to True for debugging
+            'bLogRxMsgs'  : True, # Set to True for debugging
+            'nMinTempo'   : 90,
+            'nMaxTempo'   : 140
         }
 
         # try to open configuration file ***************************************
@@ -145,6 +150,10 @@ class AaMakro5oul:
 
             elif (sName == 'send_beat'):
                 self.m_bSendBeat = (sValue == 'true')
+            elif (sName == 'min_tempo'):
+                self.m_hConfig['nMinTempo'] = int(sValue)
+            elif (sName == 'max_tempo'):
+                self.m_hConfig['nMaxTempo'] = int(sValue)
 
             else:
                 self.log('!Error: could not parse config feature "%s"!' % (sName))
@@ -186,6 +195,7 @@ class AaMakro5oul:
             oModule.disconnect()
 
         self.send('/session/tempo', '0.0')
+        self.send('/session/tempo/fader', '0.0')
         self.send('/EDIT', [self.m_sDeviceId, '{"label": "-"}'])
         self.send(self.m_sDeviceAddr, 0.0)
 
@@ -279,6 +289,11 @@ class AaMakro5oul:
     def on_tempo_changed(self):
         nTempo = self.m_oSong.tempo
         self.send('/session/tempo', '%.2f' % (nTempo))
+
+        nMinTempo = self.m_hConfig['nMinTempo']
+        nMaxTempo = self.m_hConfig['nMaxTempo']
+        nTempoFader = (nTempo - nMinTempo) / (nMaxTempo - nMinTempo)
+        self.send('/session/tempo/fader', nTempoFader)
 
         # forward the event to the modules
         for oModule in self.m_aModules:
